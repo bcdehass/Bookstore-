@@ -52,10 +52,18 @@
             <%= yield %>
           </div>
           <div class="col-md-4">
-          <%= render 'partials/sidebar' %>
+          <%= render 'partials/sidebar' %> <%# this loads the content from the sidebar file in partials folder. No need to include underscore%>
           </div>
         </div>
       </div>
     </section>
+
+    <footer>
+      <div class="container">
+        <p>Copyright &copy; 2017, All Rights Reserved</p>
+      </div>s
+    </footer>
+
+
 </body>
 </html>
