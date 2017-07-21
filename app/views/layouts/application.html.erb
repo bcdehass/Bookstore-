@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bookstore</title>
+  <title><%= @page_title ? @page_title : 'Welcome'%> | The BookStore</title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,7 +39,11 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
-<%= yield %>
+    <header>
+      <div class="container">
+        <h1>The BookStore <small><%= @page_title ? @page_title : 'Welcome'%></small></h1>
+    </header>
+    <%= yield %>
 
 </body>
 </html>
