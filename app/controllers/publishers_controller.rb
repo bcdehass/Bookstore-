@@ -6,9 +6,13 @@ class PublishersController < ApplicationController
 
   def create
     @publisher = Publisher.new(publisher_params) 
-    @publisher.save
-    
-    redirect_to publishers_path 
+    if @publisher.save #if the save is successful, redirect. if it's not, reload the create form
+      flash[:notice] = "Publisher Created" #flashes message. must update the layout page for it to work on all pages
+
+      redirect_to publishers_path 
+    else 
+      render 'new'
+    end 
   end
 
   def update

@@ -6,9 +6,14 @@ class AuthorsController < ApplicationController
 
   def create
     @author = Author.new(author_params)
-    @author.save
+    if @author.save #if the save is successful, redirect. if it's not, reload the create form
+      flash[:notice] = "Author Created" #flashes message. must update the layout page for it to work on all pages
+
+      redirect_to authors_path 
+    else 
+      render 'new'
+    end 
     
-    redirect_to authors_path 
   end
 
   def update
