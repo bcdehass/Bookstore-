@@ -30,7 +30,9 @@ class CategoriesController < ApplicationController
   end
 
   def show
+    @category = Category.find(params[:id])
     @categories = Category.all
+    @books = @category.books #brings in all books for specific category. 
   end
 
   private 
