@@ -53,7 +53,7 @@ class BooksController < ApplicationController
   private 
     def book_params
     # private method that defines which fields book has access to
-    params.require(:book).permit(:title, :category_id, :author_id, :publisher_id, :isbn, :price, :buy, :format, :excerpt, :pages, :year)
+    params.require(:book).permit(:title, :category_id, :coverpath, :author_id, :publisher_id, :isbn, :price, :buy, :format, :excerpt, :pages, :year)
   end
 
 end
